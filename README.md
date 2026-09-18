@@ -43,7 +43,7 @@ Assets include the following for the project:
 <br>
 
 ## Important Links
-<a href = "https://youtu.be/UwgkzfUL5II">Video Link for Ship Explanation</a>
+<a href = "https://youtu.be/hKBs2lY0gew">Video Link for Ship Explanation</a>
 
 
 
