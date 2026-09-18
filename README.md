@@ -1,4 +1,4 @@
-# Project 1 - Go Go Gummmi!
+# Project 1 - Go Go Gummi!
 
 
 ## Description
