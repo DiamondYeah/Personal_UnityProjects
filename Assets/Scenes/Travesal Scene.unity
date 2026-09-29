@@ -12836,10 +12836,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResetTrigger
   buttonHead: {fileID: 927843341}
   platforms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 84001535}
+  - {fileID: 207757311}
+  - {fileID: 207757311}
+  - {fileID: 1251123072}
+  - {fileID: 1959114976}
+  - {fileID: 490071834}
+  - {fileID: 670097109}
   color: {r: 0.6074173, g: 0.13930222, b: 0.8113208, a: 0}
   resetPositionSpeed: 10
   resetRotationSpeed: 150
