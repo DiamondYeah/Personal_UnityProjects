@@ -26,9 +26,10 @@ Assets include the following for the project:
 <br>
 
 
-<b>NOTE:</b>
-<i>Does not include a working build. Only the Unity project itself.</i>
+### IMPORTANT NOTE:
+<b><i>Does not include a working build. Only the Unity project itself.</i><b>
 
+<b>If materials don't render from the Library folder, delete the Library folder in File Explorer and reopen the Project again in Unity. It should recreate the Library folder again and allow proper rendering of materials.</b>
 
 
 ## Images
