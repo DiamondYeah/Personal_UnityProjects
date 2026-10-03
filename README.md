@@ -1,4 +1,4 @@
-# Project 2 - Laser Room!
+# Project 3 - Laser Room!
 
 
 ## Description
