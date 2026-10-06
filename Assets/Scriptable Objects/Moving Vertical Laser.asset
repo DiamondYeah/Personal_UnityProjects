@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853eaf470e9affd45abd1e53760f9fde, type: 3}
+  m_Name: Moving Vertical Laser
+  m_EditorClassIdentifier: Assembly-CSharp::LaserStats
+  damage: 20
+  forwardSpeed: 10
+  canMoveSideways: 0
+  sidewaysDistanceBoundary: 0
+  sidewaysSpeed: 0
+  canMoveVertical: 1
+  verticalDistanceBoundary: 0.05
+  verticalSpeed: 1.5
