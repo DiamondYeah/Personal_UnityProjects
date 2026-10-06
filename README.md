@@ -12,14 +12,12 @@ Scroll below for the images of the project and the video for the explanation of 
 
 
 Assets include the following for the project:
-
 <ul>
-  <b><li>Player Movement and Jump</li></b>
-  <b><li>Smooth 3rd Person Follow</li></b>
-  <b><li>Buttons that rotate and move platforms</li></b>
-  <b><li>3 levels!!</li></b>
-  <b><li>Button to reset controlled platforms in level</li></b>
-  <b><li>Checkpoints</li></b>
+  <b><li>Lasers you have to avoid!</li></b>
+  <b><li>Smooth 1st Person Controller</li></b>
+  <b><li>Levels that progressively get harder</li></b>
+  <b><li>Powerups that will aid you in progressing through the game</li></b>
+  <b><li>UI to visualize player health and effects</li></b>
 </ul>
 
 
@@ -33,14 +31,14 @@ Assets include the following for the project:
 
 
 ## Images
-
-
+<img width="1021" height="605" alt="LaserRoom_Level1" src="https://github.com/user-attachments/assets/30b24670-9477-40c7-a98d-720a410fa9bb" />
+<img width="1016" height="592" alt="LaserRoom_Level4" src="https://github.com/user-attachments/assets/1a8d956f-27e1-48d7-b4ba-fc640108f126" />
 
 <br>
 <br>
 
 ## Important Links
-<a href = "https://youtu.be/IPA5PpIYuUY">Video Link for Traversal Explanation</a>
+<a href = "https://youtu.be/-BWHzTLJZVI">Video Link for Laser Room Explanation</a>
 
 
 
