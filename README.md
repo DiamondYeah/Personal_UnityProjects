@@ -3,7 +3,7 @@
 
 ## Description
 
-Repo branch containing the Unity project files for the Laser Room Game for GAMEDEV.
+Repo branch containing the Unity project files for the Knockdown Game for GAMEDEV.
 
 Scroll below for the images of the project and the video for the explanation of the game and its mechanics.
 
@@ -13,11 +13,11 @@ Scroll below for the images of the project and the video for the explanation of 
 
 Assets include the following for the project:
 <ul>
-  <b><li>Lasers you have to avoid!</li></b>
-  <b><li>Smooth 1st Person Controller</li></b>
-  <b><li>Levels that progressively get harder</li></b>
-  <b><li>Powerups that will aid you in progressing through the game</li></b>
-  <b><li>UI to visualize player health and effects</li></b>
+  <b><li>2 Stands with bottles inside of them</li></b>
+  <b><li>Includes stationary and moving bottles to hit down!</li></b>
+  <b><li>Ball throwing mechanic to knock the balls down</li></b>
+  <b><li>UI to visualize how much balls you can still throw</li></b>
+  <b><li>Win/Lose mechanics depending on whether you have knocked down all the bottles or not</li></b>
 </ul>
 
 
@@ -31,14 +31,19 @@ Assets include the following for the project:
 
 
 ## Images
-<img width="1021" height="605" alt="LaserRoom_Level1" src="https://github.com/user-attachments/assets/30b24670-9477-40c7-a98d-720a410fa9bb" />
-<img width="1016" height="592" alt="LaserRoom_Level4" src="https://github.com/user-attachments/assets/1a8d956f-27e1-48d7-b4ba-fc640108f126" />
+
+#### 1st Stand: Stationary Bottles
+<img width="900" height="500" alt="Knockdown_Pic1" src="https://github.com/user-attachments/assets/1f65d24a-d3c3-4068-8cdf-f8057534c7e7" />
+
+#### 2nd Stand: Moving Bottles
+<img width="900" height="500" alt="Knockdown_Pic2" src="https://github.com/user-attachments/assets/18ab34ad-6ddc-4270-9713-98ac83f9b172" />
+
 
 <br>
 <br>
 
 ## Important Links
-<a href = "https://youtu.be/-BWHzTLJZVI">Video Link for Laser Room Explanation</a>
+<a href = "https://youtu.be/17g_nzjmtuY">Video Link for Knockdown Explanation</a>
 
 
 
