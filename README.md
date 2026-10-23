@@ -1,9 +1,8 @@
-# Project 3 - Laser Room!
-
+# Project 3 - Ray-OE Zoning!
 
 ## Description
 
-Repo branch containing the Unity project files for the Laser Room Game for GAMEDEV.
+Repo branch containing the Unity project files for the Ray-OE Zoning for GAMEDEV.
 
 Scroll below for the images of the project and the video for the explanation of the game and its mechanics.
 
@@ -13,11 +12,11 @@ Scroll below for the images of the project and the video for the explanation of 
 
 Assets include the following for the project:
 <ul>
-  <b><li>Lasers you have to avoid!</li></b>
-  <b><li>Smooth 1st Person Controller</li></b>
-  <b><li>Levels that progressively get harder</li></b>
-  <b><li>Powerups that will aid you in progressing through the game</li></b>
-  <b><li>UI to visualize player health and effects</li></b>
+  <b><li>Avoid Cameras and Lasers!</li></b>
+  <b><li>Detection Mechanics via CheckSphere, OverlapSphere, and Raycast</li></b>
+  <b><li>2 Levels to beat to win the game</li></b>
+  <b><li>Invisible objects that become visible when shining your flashlight at them</li></b>
+  <b><li>UI to visualize player health</li></b>
 </ul>
 
 
@@ -31,14 +30,14 @@ Assets include the following for the project:
 
 
 ## Images
-<img width="1021" height="605" alt="LaserRoom_Level1" src="https://github.com/user-attachments/assets/30b24670-9477-40c7-a98d-720a410fa9bb" />
-<img width="1016" height="592" alt="LaserRoom_Level4" src="https://github.com/user-attachments/assets/1a8d956f-27e1-48d7-b4ba-fc640108f126" />
+<img width="1062" height="597" alt="RayOEZoning_Pic1" src="https://github.com/user-attachments/assets/124fca6d-5d25-4783-a1a3-ec0a553b8abf"/>
+<img width="1045" height="585" alt="RayOEZoning_Pic2" src="https://github.com/user-attachments/assets/9f6b46ea-84c3-4a6f-a272-72ed1da31af3"/>
 
 <br>
 <br>
 
 ## Important Links
-<a href = "https://youtu.be/-BWHzTLJZVI">Video Link for Laser Room Explanation</a>
+<a href = "https://youtu.be/-JvOKtEWPnU">Video Link for Ray-OE Zoning Gameplay & Explanation</a>
 
 
 
