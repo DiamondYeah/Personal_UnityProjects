@@ -1188,4 +1188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2113d6553b57122419c4533633d5f333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaserMove
-  laserStats: {fileID: 11400000, guid: fa5e6d2c7fc98df4285e2614c4e80117, type: 2}
+  laserStats: {fileID: 11400000, guid: 078ed540a68f3dd41889e6d30d83cb65, type: 2}

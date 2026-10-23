@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   health: 100
   isVulnerable: 1
-  movementSpeedMultiplier: 3
-  maxVelocity: 5
+  baseSpeedMultipler: 4
+  maxVelocity: 6
+  sprintSpeedMultiplier: 6
+  crouchSpeedMultiplier: 1
+  crouchYScale: 0.65
+  crouchYOffset: 0.45
   jumpHeight: 8
   groundDetectionDistance: 1.2
+  movementSpeedMultiplier: 0
+  currentSpeed: 0

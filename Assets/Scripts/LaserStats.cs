@@ -7,6 +7,10 @@ public class LaserStats : ScriptableObject
     public float damage;
     public float forwardSpeed;
 
+    [Header("Laser Detection Stats")]
+    public float nextDetectCheck;
+    public LayerMask detectionMask;
+
     [Header("Moving Horizontal Laser Stats")]
     public bool canMoveSideways;
     public float sidewaysDistanceBoundary;

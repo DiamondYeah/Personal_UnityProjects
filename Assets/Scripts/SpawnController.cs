@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 [Serializable]
 public class LasersInLevel
@@ -26,6 +25,8 @@ public class SpawnController : MonoBehaviour
 
     [Space(15)]
     [Header("Laser Spawn Settings")]
+    [SerializeField]
+    private bool canSpawnLasers;
     [SerializeField]
     private GameObject laserSpawnZone;
 
@@ -52,10 +53,20 @@ public class SpawnController : MonoBehaviour
     void Start()
     {
         panelSpawnCollider = panelSpawnZone.GetComponent<Collider>();
-        laserSpawnCollider = laserSpawnZone.GetComponent<Collider>();
+
+        if (canSpawnLasers)
+        {
+            laserSpawnCollider = laserSpawnZone.GetComponent<Collider>();
+        }
+
 
         SpawnPanels();
-        StartCoroutine(SpawnLaser());
+
+        if (canSpawnLasers)
+        {
+            StartCoroutine(SpawnLaser());
+        }
+
     }
 
     // Add events to be observed when active
@@ -110,7 +121,6 @@ public class SpawnController : MonoBehaviour
 
             GameObject selectedLaser = lasers[currentLevel - 1].possibleLasers[randomNum];
             GameObject laser = Instantiate(selectedLaser, RandomizeLaserSpawnLocation(), selectedLaser.transform.rotation);
-            laser.GetComponent<LaserMove>().Initialize(startSideLoc, endSideLoc, startVertLoc, endVertLoc);
         }
     }
 }

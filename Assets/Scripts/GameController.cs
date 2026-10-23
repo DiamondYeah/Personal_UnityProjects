@@ -1,8 +1,25 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+[Serializable]
+public class Levels
+{
+    public int level;
+    public Vector3 SpawnArea;
+}
+
 
 public class GameController : MonoBehaviour
 {
     public static int currentLevel = 1;
+
+    [Header("Levels")]
+    [SerializeField]
+    private Levels[] levels;
+    [SerializeField]
+    private int winningLevel;
 
     [Header("Reset Game Settings")]
     [SerializeField]
@@ -45,52 +62,40 @@ public class GameController : MonoBehaviour
         EventController.PlayerIsAtEnd -= ProgressToNextLevel;
     }
 
-    // Method handles resetting the game
+    // Method handles resetting the game by reloading scene
     private void ResetGame()
     {
-        if (isResetting)
-        {
-            return;
-        }
-        isResetting = true;
-
-
         currentLevel = 1;
-
-        EventController.ResetGameEvent();
-
-        player.transform.position = playerResetLoc; // Reset player's position to playerResetLoc
-
-        // Destroy all lasers
-        GameObject[] lasers = GameObject.FindGameObjectsWithTag("Laser");
-        foreach (GameObject laser in lasers)
-        {
-            Destroy(laser);
-        }
-        
-        playerStats = player.GetComponent<PlayerController>().runtimeStats; // Get runTimeStats for player again to reset values
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Method handles resetting the game
     public void ProgressToNextLevel()
     {
-        currentLevel++; // Increment level
-
-        player.transform.position = playerResetLoc; // Reset player's position to playerResetLoc
+        if(currentLevel >= winningLevel)
+        {
+            EventController.WinEvent();
+        }
+        else
+        {
+            currentLevel++; // Increment level
+            player.transform.position = levels[currentLevel - 1].SpawnArea; // Move player to next spawn area
+        }
+        
 
         // Destroy all lasers
-        GameObject[] lasers = GameObject.FindGameObjectsWithTag("Laser");
-        foreach (GameObject laser in lasers)
-        {
-            Destroy(laser);
-        }
+        //GameObject[] lasers = GameObject.FindGameObjectsWithTag("Laser");
+        //foreach (GameObject laser in lasers)
+        //{
+        //    Destroy(laser);
+        //}
 
         // Destroy all powerup panels
-        GameObject[] panels = GameObject.FindGameObjectsWithTag("Powerup");
-        foreach (GameObject panel in panels)
-        {
-            Destroy(panel);
-        }
+        //GameObject[] panels = GameObject.FindGameObjectsWithTag("Powerup");
+        //foreach (GameObject panel in panels)
+        //{
+        //    Destroy(panel);
+        //}
 
         isResetting = false;
     }

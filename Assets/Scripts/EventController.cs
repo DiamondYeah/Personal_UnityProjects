@@ -6,10 +6,10 @@ public class EventController : MonoBehaviour
 
     public static event Action<float> DamagePlayer;
     public static event Action PlayerLostAllHealth;
-    public static event Action ResetGame;
     public static event Action<float> PlayerHeal;
     public static event Action<Powerups, float> ActivateEffect;
     public static event Action PlayerIsAtEnd;
+    public static event Action Win;
 
     public static void DamagePlayerEvent(float damage)
     {
@@ -26,11 +26,6 @@ public class EventController : MonoBehaviour
         PlayerLostAllHealth?.Invoke();
     }
 
-    public static void ResetGameEvent()
-    {
-        ResetGame?.Invoke();
-    }
-
     public static void ActivatePlayerEffect(Powerups powerup, float duration)
     {
         ActivateEffect?.Invoke(powerup, duration);
@@ -39,5 +34,10 @@ public class EventController : MonoBehaviour
     public static void PlayerReachedEnd()
     {
         PlayerIsAtEnd?.Invoke();
+    }
+
+    public static void WinEvent()
+    {
+        Win?.Invoke();
     }
 }

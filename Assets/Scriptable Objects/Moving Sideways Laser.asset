@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaserStats
   damage: 20
   forwardSpeed: 10
+  nextDetectCheck: 1
+  detectionMask:
+    serializedVersion: 2
+    m_Bits: 8
   canMoveSideways: 1
   sidewaysDistanceBoundary: 0.05
   sidewaysSpeed: 1.5

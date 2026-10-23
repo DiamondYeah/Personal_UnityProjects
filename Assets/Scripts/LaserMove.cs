@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserMove : MonoBehaviour
@@ -6,52 +7,55 @@ public class LaserMove : MonoBehaviour
     [SerializeField]
     private LaserStats laserStats;
 
+    [SerializeField]
+    private Transform startSideLoc;
+    [SerializeField]
+    private Transform endSideLoc;
+    [SerializeField]
+    private Transform startVertLoc;
+    [SerializeField]
+    private Transform endVertLoc;
 
+    // Variables for laser detection
+    private float detectCheck = 0f;
+    private bool hasHitOnce = false; // Ignore timer when it's first hit 
 
     private bool isSideGoingBack = false;
     private bool isVertGoingBack = false;
 
-    private Transform startSideLoc;
-    private Transform endSideLoc;
-    private Transform startVertLoc;
-    private Transform endVertLoc;
-
-    // Method called for initializing various transform positions for moving
-    public void Initialize(Transform sSideLoc, Transform eSideLoc, Transform sVertLoc, Transform eVertLoc)
-    {
-        this.startSideLoc = sSideLoc;
-        this.endSideLoc = eSideLoc;
-        this.startVertLoc = sVertLoc;
-        this.endVertLoc = eVertLoc;
-
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         MoveForward();
         MoveSideways();
         MoveVertical();
-    }
 
-    // Method calls event when player hits laser, dealing damage to player
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") && other.GetComponent<PlayerController>().runtimeStats.isVulnerable)
+        // Visualize raycast in scene for top and bottom of laser
+        Debug.DrawRay(transform.position, Vector3.down * transform.position.y, Color.blue);
+        Debug.DrawRay(transform.position, Vector3.up * transform.position.y, Color.blue);
+
+        // Use Time.time to perform a detection check every n seconds, where n is nextDetectCheck
+        if (Time.time >= detectCheck || !hasHitOnce)
         {
-            EventController.DamagePlayerEvent(laserStats.damage);
+            detectCheck = Time.time + laserStats.nextDetectCheck;
+
+            // Check if player has bit hit by laser via physics.raycast in both directions and damage them if so
+            RaycastHit hit; // Hit detection for raycast
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, transform.position.y, laserStats.detectionMask) ||
+                Physics.Raycast(transform.position, Vector3.up, out hit, transform.position.y, laserStats.detectionMask))
+            {
+                EventController.DamagePlayerEvent(laserStats.damage);
+                hasHitOnce = true;
+            }
         }
 
-        if (other.gameObject.CompareTag("Despawn")) 
-        {
-            DestroyLaser();
-        }
     }
 
     // Method moves the laser forward based on laserStats forward speed

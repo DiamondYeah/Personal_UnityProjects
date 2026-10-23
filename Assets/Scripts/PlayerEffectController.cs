@@ -20,28 +20,6 @@ public class PlayerEffectController : MonoBehaviour
         runtimeStats = gameObject.GetComponent<PlayerController>().runtimeStats;
     }
 
-    // Add events to be observed when active
-    private void OnEnable()
-    {
-        EventController.ResetGame += ClearEffects;
-    }
-
-    // Disable events when disabled or destroyed as common pracitce for events
-    private void OnDisable()
-    {
-        EventController.ResetGame -= ClearEffects;
-    }
-
-    // Method stops all current coroutines and resets all current buffs
-    void ClearEffects()
-    {
-        StopAllCoroutines();
-        speedUpCoroutine = null;
-        jumpUpCoroutine = null;
-        beInvincibleCoroutine = null;
-}
-
-
     // Method reduces health of player depending on damage passed
     public void HealPlayer(float healAmount)
     {

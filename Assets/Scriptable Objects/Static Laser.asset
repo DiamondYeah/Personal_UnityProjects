@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853eaf470e9affd45abd1e53760f9fde, type: 3}
   m_Name: Static Laser
   m_EditorClassIdentifier: Assembly-CSharp::LaserStats
-  damage: 20
-  forwardSpeed: 10
+  damage: 34
+  forwardSpeed: 0
+  nextDetectCheck: 1
+  detectionMask:
+    serializedVersion: 2
+    m_Bits: 8
   canMoveSideways: 0
-  sidewaysDistanceBoundary: 0
-  sidewaysSpeed: 0
+  sidewaysDistanceBoundary: 0.05
+  sidewaysSpeed: 1.5
   canMoveVertical: 0
   verticalDistanceBoundary: 0
   verticalSpeed: 0

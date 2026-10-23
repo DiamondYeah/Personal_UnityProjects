@@ -27,6 +27,8 @@ public class PlayerUIController : MonoBehaviour
     [Header("Player Level Settings")]
     [SerializeField]
     private TextMeshProUGUI levelText;
+    [SerializeField]
+    private TextMeshProUGUI winText;
 
     [Header("Player Effects UI Settings")]
     [SerializeField]
@@ -39,6 +41,8 @@ public class PlayerUIController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        winText.enabled = false; // Hide win text
+
         // Get required components
         player = GameObject.FindGameObjectWithTag("Player");
         playerStats = player.GetComponent<PlayerController>().runtimeStats;
@@ -63,11 +67,9 @@ public class PlayerUIController : MonoBehaviour
     {
         EventController.DamagePlayer += DecreasePlayerHealth;
         EventController.PlayerHeal += IncreasePlayerHealth;
-        EventController.ResetGame += ResetPlayerHealth;
-        EventController.ResetGame += ResetPlayerLevel;
-        EventController.ResetGame += ClearAllUIEffects;
         EventController.ActivateEffect += EnableEffect;
         EventController.PlayerIsAtEnd += IncrementPlayerLevel;
+        EventController.Win += ShowWin;
     }
 
     // Disable events when disabled or destroyed as common pracitce for events
@@ -75,11 +77,8 @@ public class PlayerUIController : MonoBehaviour
     {
         EventController.DamagePlayer -= DecreasePlayerHealth;
         EventController.PlayerHeal -= IncreasePlayerHealth;
-        EventController.ResetGame -= ResetPlayerHealth;
-        EventController.ResetGame -= ResetPlayerLevel;
-        EventController.ResetGame -= ClearAllUIEffects;
         EventController.ActivateEffect -= EnableEffect;
-        EventController.PlayerIsAtEnd -= IncrementPlayerLevel;
+        EventController.Win -= ShowWin;
     }
 
     // Method lowers the slider's value depending on damage passed
@@ -100,17 +99,10 @@ public class PlayerUIController : MonoBehaviour
         levelText.text = "Level " + GameController.currentLevel;
     }
 
-    // Method resets the player's health display to default values
-    private void ResetPlayerLevel()
+    // Method shows win text
+    private void ShowWin()
     {
-        levelText.text = "Level 1";
-    }
-
-    // Method resets the player's health display to default values
-    private void ResetPlayerHealth()
-    {
-        hpSlider.maxValue = defaultStats.health;
-        hpSlider.value = defaultStats.health;
+        winText.enabled = true;
     }
 
     // Method enables effect UI depending on what effect was activated
@@ -159,25 +151,6 @@ public class PlayerUIController : MonoBehaviour
     private void DisableEffect(EffectUI effect)
     {
         effect.effectContainer.SetActive(false);
-    }
-
-    // Method resets all currently running UI effects and hides their UI
-    private void ClearAllUIEffects()
-    {
-        // Goes through the effectsUI array to reset them
-        foreach (EffectUI effect in effectsUI)
-        {
-
-            if (effect.effectCoroutine != null)
-            {
-                StopCoroutine(effect.effectCoroutine);
-                effect.effectCoroutine = null;
-            }
-
-            effect.effectContainer.SetActive(false);
-
-        }
-
     }
 
 }
